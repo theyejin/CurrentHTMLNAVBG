@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS 判断当前页面的选中状态</title>
+<style>
+body{
+	margin:0;
+	padding:0;
+	text-decoration: none;
+}
+ul, ol, li, dl, dt, dd {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.nav {
+    height: 47px;
+    line-height: 47px;
+    background:#3304F3;
+    background-repeat: repeat-x;
+    background-position: center center;
+    margin-top: 10px;
+}
+
+.nav_list {
+    overflow: hidden;
+    width: 1012px;
+    margin: 0 auto;
+}
+
+.nav_list li {
+    float: left;
+    width: 112px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.nav_list li a {
+    color: #ffffff;
+    display: block;
+}
+.bg_a {
+    height: 47px;
+    line-height: 47px;
+    background: #f60;
+    background-repeat: repeat-x;
+    background-position: center center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+    <ul class="nav_list" id="menu">
+        <li ><a href="/index" class="bg_a">首页</a></li>
+        <li ><a href="/about_us">关于我们</a></li>
+        <li ><a href="/company_performance">公司业绩</a></li>
+<!--        <li><a href="/company_case">工程案例</a></li>-->
+        <li><a href="/company_equip">设备展示</a></li>
+        <li><a href="/news_center">新闻中心</a></li>
+        <li><a href="/online_message">在线留言</a></li>
+        <li><a href="/down_center">下载中心</a></li>
+        <li><a href="/talents">人才招聘</a></li>
+        <li> <a href="/contact_us">联系我们</a></li>
+    </ul>
+</div>
+    <script type="text/javascript">
+        var urlstr = location.href;
+        //.alert((urlstr + '/').indexOf($(this).attr('href')));
+        var urlstatus=false;
+        $("#menu a").each(function () {
+            if ((urlstr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') {
+
+                $(this).addClass('bg_a'); urlstatus = true;
+            } else {
+
+                $(this).removeClass('bg_a');
+            }
+        });
+        if (!urlstatus) {$("#menu a").eq(0).addClass('bg_a'); }
+    </script>
+   <!--导航-->
+
+
+</body>
+</html>
