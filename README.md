@@ -1,7 +1,9 @@
 # CurrentHTMLNAVBG
 JS 判断当前页面的选中状态
+ 根据判断点击栏目后，增加或移除“bg_a”CSS,来显示当页面的选中状态。
+ 非常易用的代码。
  ----------------------------
- <script type="text/javascript">
+
         var urlstr = location.href;
         //.alert((urlstr + '/').indexOf($(this).attr('href')));
         var urlstatus=false;
@@ -15,6 +17,7 @@ JS 判断当前页面的选中状态
             }
         });
         if (!urlstatus) {$("#menu a").eq(0).addClass('bg_a'); }
-    </script>
+
+   
  -----------------------------------
- 根据判断点击栏目后，增加或移除“bg_a”CSS
+ 
